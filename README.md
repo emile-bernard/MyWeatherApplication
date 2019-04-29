@@ -10,4 +10,5 @@ Simple Weather Android app with Kotlin.
 
 ## Links
 
+- [Open Weather Map](https://openweathermap.org/)
 - [Material icons](https://material.io/tools/icons/?style=baseline)
