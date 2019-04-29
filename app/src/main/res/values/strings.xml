@@ -1,3 +1,35 @@
 <resources>
-    <string name="app_name">MyWeatherApplication</string>
+    <string name="app_name">Weather App</string>
+
+    <!-- City fragment -->
+    <string name="city_cities">Cities</string>
+    <string name="city_message_error_could_not_create_city">Could not create city</string>
+    <string name="city_message_error_could_not_delete_city">Could not delete %1$s</string>
+    <string name="city_message_info_city_deleted">%1$s has been deleted</string>
+
+    <!-- City menu -->
+    <string name="menu_create_city">Create city</string>
+
+    <!-- Create city dialog -->
+    <string name="createcity_cityhint">New York, London</string>
+    <string name="createcity_title">New city name?</string>
+    <string name="createcity_positive">Create city</string>
+    <string name="createcity_negative">Cancel</string>
+
+    <!-- Delete city dialog -->
+    <string name="deletecity_title">Do you really want to delete %1$s?</string>
+    <string name="deletecity_positive">Delete city</string>
+    <string name="deletecity_negative">Cancel</string>
+
+    <!-- WeatherOld fragment -->
+    <string name="weather_temperature_label">Temperature:</string>
+    <string name="weather_humidity_label">Humidity:</string>
+    <string name="weather_pressure_label">Pressure:</string>
+    <string name="weather_temperature_value">%1$d °C</string>
+    <string name="weather_humidity_value">%1$d %%</string>
+    <string name="weather_pressure_value">%1$s hPa</string>
+    <string name="weather_message_error_could_not_load_weather">Failed to load weather data</string>
+
+    <!-- WeatherOld menu -->
+    <string name="menu_refresh_weather">Refresh weather</string>
 </resources>

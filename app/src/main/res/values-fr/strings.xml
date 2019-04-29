@@ -1,0 +1,35 @@
+<resources>
+    <string name="app_name">Météo</string>
+
+    <!-- City fragment -->
+    <string name="city_cities">Cities</string>
+    <string name="city_message_error_could_not_create_city">Impossible de créer la ville</string>
+    <string name="city_message_error_could_not_delete_city">Impossible de supprimer %1$s</string>
+    <string name="city_message_info_city_deleted">%1$s est supprimé</string>
+
+    <!-- City menu -->
+    <string name="menu_create_city">Créer une ville</string>
+
+    <!-- Create city dialog -->
+    <string name="createcity_cityhint">Montréal, Québec</string>
+    <string name="createcity_title">Nom de la ville ?</string>
+    <string name="createcity_positive">Créer la ville</string>
+    <string name="createcity_negative">Annuler</string>
+
+    <!-- Delete city dialog -->
+    <string name="deletecity_title">Êtes-vous sûr de vouloir supprimer %1$s?</string>
+    <string name="deletecity_positive">Supprimer la ville</string>
+    <string name="deletecity_negative">Annuler</string>
+
+    <!-- WeatherOld fragment -->
+    <string name="weather_temperature_label">Température :</string>
+    <string name="weather_humidity_label">Humidité :</string>
+    <string name="weather_pressure_label">Pression :</string>
+    <string name="weather_temperature_value">%1$d °C</string>
+    <string name="weather_humidity_value">%1$d %%</string>
+    <string name="weather_pressure_value">%1$s hPa</string>
+    <string name="weather_message_error_could_not_load_weather">Erreur lors du chargement des données météos</string>
+
+    <!-- WeatherOld menu -->
+    <string name="menu_refresh_weather">Rafraichir la météo</string>
+</resources>

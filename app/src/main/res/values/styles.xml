@@ -8,4 +8,14 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="WeatherLabel">
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">@android:color/secondary_text_light</item>
+    </style>
+
+    <style name="WeatherData">
+        <item name="android:textSize">25sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@android:color/primary_text_light</item>
+    </style>
 </resources>
