@@ -37,11 +37,26 @@
             tools:src="@mipmap/ic_launcher" />
 
         <TextView
+                android:id="@+id/main_weather_description"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:layout_marginBottom="50dp"
+                android:layout_marginStart="30dp"
+                app:layout_constraintLeft_toRightOf="@id/weather_icon"
+                app:layout_constraintTop_toTopOf="@id/weather_icon"
+                app:layout_constraintBottom_toBottomOf="@id/weather_icon"
+                android:textSize="28sp"
+                android:textColor="@android:color/secondary_text_light"
+                tools:text="Sunny"/>
+
+        <TextView
             android:id="@+id/weather_description"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="30dp"
             android:layout_marginStart="30dp"
+            android:layout_marginTop="30sp"
             app:layout_constraintLeft_toRightOf="@id/weather_icon"
             app:layout_constraintTop_toTopOf="@id/weather_icon"
             app:layout_constraintBottom_toBottomOf="@id/weather_icon"
@@ -62,67 +77,108 @@
             app:layout_constraintBottom_toBottomOf="parent" />
 
         <TextView
-            android:id="@+id/temperature_label"
-            android:layout_width="150dp"
-            android:layout_height="wrap_content"
-            app:layout_constraintLeft_toLeftOf="@id/back_info"
-            app:layout_constraintTop_toTopOf="@id/back_info"
-            app:layout_constraintBottom_toTopOf="@id/humidity_label"
-            app:layout_constraintVertical_chainStyle="spread"
-            style="@style/WeatherLabel"
-            android:text="Temperature: " />
+                android:id="@+id/temperature_label"
+                android:layout_height="wrap_content"
+                app:layout_constraintLeft_toLeftOf="@id/weather_description"
+                app:layout_constraintTop_toTopOf="@id/weather_description"
+                android:layout_marginTop="50sp"
+                app:layout_constraintVertical_chainStyle="spread"
+                style="@style/WeatherLabel"
+                android:text="@string/weather_temperature_label"/>
 
         <TextView
-            android:id="@+id/temperature"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintLeft_toRightOf="@id/temperature_label"
-            app:layout_constraintTop_toTopOf="@id/temperature_label"
-            app:layout_constraintBottom_toBottomOf="@id/temperature_label"
-            style="@style/WeatherData"
-            tools:text="30°C" />
+                android:id="@+id/temperature"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintLeft_toRightOf="@id/temperature_label"
+                app:layout_constraintTop_toTopOf="@id/temperature_label"
+                app:layout_constraintBottom_toBottomOf="@id/temperature_label"
+                style="@style/WeatherData"
+                tools:text="30°C"/>
 
         <TextView
-            android:id="@+id/humidity_label"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            app:layout_constraintLeft_toLeftOf="@id/temperature_label"
-            app:layout_constraintRight_toRightOf="@id/temperature_label"
-            app:layout_constraintTop_toBottomOf="@id/temperature_label"
-            app:layout_constraintBottom_toTopOf="@id/pressure_label"
-            style="@style/WeatherLabel"
-            android:text="Humidity: " />
+                android:id="@+id/tempMin_label"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintLeft_toLeftOf="@id/temperature_label"
+                app:layout_constraintRight_toRightOf="@id/temperature_label"
+                app:layout_constraintTop_toBottomOf="@id/temperature_label"
+                app:layout_constraintBottom_toTopOf="@id/tempMax_label"
+                style="@style/SecondaryWeatherLabel"
+                android:text="@string/weather_temp_min_label"/>
 
         <TextView
-            android:id="@+id/humidity"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintLeft_toLeftOf="@id/temperature"
-            app:layout_constraintTop_toTopOf="@id/humidity_label"
-            app:layout_constraintBottom_toBottomOf="@id/humidity_label"
-            style="@style/WeatherData"
-            tools:text="52%" />
+                android:id="@+id/tempMin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintLeft_toLeftOf="@id/pressure"
+                app:layout_constraintTop_toTopOf="@id/tempMin_label"
+                app:layout_constraintBottom_toBottomOf="@id/tempMin_label"
+                style="@style/SecondaryWeatherData"
+                tools:text="30°C"/>
 
         <TextView
-            android:id="@+id/pressure_label"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            app:layout_constraintLeft_toLeftOf="@id/temperature_label"
-            app:layout_constraintRight_toRightOf="@id/temperature_label"
-            app:layout_constraintTop_toBottomOf="@id/humidity_label"
-            app:layout_constraintBottom_toBottomOf="@id/back_info"
-            style="@style/WeatherLabel"
-            android:text="Pressure: " />
+                android:id="@+id/tempMax_label"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintLeft_toLeftOf="@id/tempMin_label"
+                app:layout_constraintRight_toRightOf="@id/tempMin_label"
+                app:layout_constraintTop_toBottomOf="@id/tempMin_label"
+                app:layout_constraintBottom_toTopOf="@id/humidity_label"
+                style="@style/SecondaryWeatherLabel"
+                android:text="@string/weather_temp_max_label"/>
 
         <TextView
-            android:id="@+id/pressure"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintLeft_toLeftOf="@id/temperature"
-            app:layout_constraintTop_toTopOf="@id/pressure_label"
-            app:layout_constraintBottom_toBottomOf="@id/pressure_label"
-            style="@style/WeatherData"
-            tools:text="1014 hPa" />
+                android:id="@+id/tempMax"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintLeft_toLeftOf="@id/tempMin"
+                app:layout_constraintTop_toTopOf="@id/tempMax_label"
+                app:layout_constraintBottom_toBottomOf="@id/tempMax_label"
+                style="@style/SecondaryWeatherData"
+                tools:text="30°C"/>
+
+        <TextView
+                android:id="@+id/humidity_label"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintLeft_toLeftOf="@id/tempMax_label"
+                app:layout_constraintRight_toRightOf="@id/tempMax_label"
+                app:layout_constraintTop_toBottomOf="@id/tempMax_label"
+                app:layout_constraintBottom_toTopOf="@id/pressure_label"
+                style="@style/SecondaryWeatherLabel"
+                android:text="@string/weather_humidity_label"/>
+
+        <TextView
+                android:id="@+id/humidity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintLeft_toLeftOf="@id/tempMax"
+                app:layout_constraintTop_toTopOf="@id/humidity_label"
+                app:layout_constraintBottom_toBottomOf="@id/humidity_label"
+                style="@style/SecondaryWeatherData"
+                tools:text="52%"/>
+
+        <TextView
+                android:id="@+id/pressure_label"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintLeft_toLeftOf="@id/temperature_label"
+                app:layout_constraintRight_toRightOf="@id/humidity_label"
+                app:layout_constraintTop_toBottomOf="@id/humidity_label"
+                app:layout_constraintBottom_toBottomOf="@id/back_info"
+                style="@style/SecondaryWeatherLabel"
+                android:text="@string/weather_pressure_label"/>
+
+        <TextView
+                android:id="@+id/pressure"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintLeft_toLeftOf="@id/temperature"
+                app:layout_constraintTop_toTopOf="@id/pressure_label"
+                app:layout_constraintBottom_toBottomOf="@id/pressure_label"
+                style="@style/SecondaryWeatherData"
+                tools:text="1014 hPa"/>
 
     </android.support.constraint.ConstraintLayout>
 </android.support.v4.widget.SwipeRefreshLayout>

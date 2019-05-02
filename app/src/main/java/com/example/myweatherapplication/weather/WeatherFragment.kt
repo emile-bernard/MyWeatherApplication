@@ -1,5 +1,6 @@
 package com.example.myweatherapplication.weather
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.support.v4.widget.SwipeRefreshLayout
@@ -33,6 +34,7 @@ class WeatherFragment : Fragment() {
     private lateinit var refreshLayout: SwipeRefreshLayout
     private lateinit var city: TextView
     private lateinit var weatherIcon: ImageView
+    private lateinit var mainWeatherDescription: TextView
     private lateinit var weatherDescription: TextView
     private lateinit var temperature: TextView
     private lateinit var humidity: TextView
@@ -51,6 +53,7 @@ class WeatherFragment : Fragment() {
         refreshLayout = view.findViewById(R.id.swipe_refresh)
         city = view.findViewById(R.id.city)
         weatherIcon = view.findViewById(R.id.weather_icon)
+        mainWeatherDescription = view.findViewById(R.id.main_weather_description)
         weatherDescription = view.findViewById(R.id.weather_description)
         temperature = view.findViewById(R.id.temperature)
         humidity = view.findViewById(R.id.humidity)
@@ -110,12 +113,14 @@ class WeatherFragment : Fragment() {
         })
     }
 
+    @SuppressLint("StringFormatMatches")
     fun updateUi(weather: Weather) {
         Picasso.get()
                 .load(weather.iconUrl)
                 .placeholder(R.drawable.ic_cloud_off_black_24dp)
                 .into(weatherIcon)
 
+        mainWeatherDescription.text = weather.mainDescription
         weatherDescription.text = weather.description
         temperature.text = getString(R.string.weather_temperature_value, weather.temperature.toInt())
         humidity.text = getString(R.string.weather_humidity_value, weather.humidity)
@@ -128,6 +133,7 @@ class WeatherFragment : Fragment() {
         weatherIcon.setImageResource(R.drawable.ic_cloud_off_black_24dp)
         cityName = ""
         city.text = ""
+        mainWeatherDescription.text = ""
         weatherDescription.text = ""
         temperature.text = ""
         humidity.text = ""

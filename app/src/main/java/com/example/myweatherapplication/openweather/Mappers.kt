@@ -6,6 +6,7 @@ import com.example.myweatherapplication.weather.Weather
 fun mapOpenWeatherDataToWeather(weatherWrapper: WeatherWrapper) : Weather {
     val weatherFirst = weatherWrapper.weather.first()
     return Weather(
+            mainDescription = weatherFirst.mainDescription,
             description = weatherFirst.description,
             temperature = weatherWrapper.main.temperature,
             humidity = weatherWrapper.main.humidity,

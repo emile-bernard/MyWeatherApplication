@@ -39,10 +39,11 @@
                 tools:src="@mipmap/ic_launcher"/>
 
         <TextView
-                android:id="@+id/weather_description"
+                android:id="@+id/main_weather_description"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="30dp"
+                android:layout_marginBottom="50dp"
                 android:layout_marginStart="30dp"
                 app:layout_constraintLeft_toRightOf="@id/weather_icon"
                 app:layout_constraintTop_toTopOf="@id/weather_icon"
@@ -51,22 +52,34 @@
                 android:textColor="@android:color/secondary_text_light"
                 tools:text="Sunny"/>
 
+        <TextView
+                android:id="@+id/weather_description"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginStart="30dp"
+                app:layout_constraintLeft_toRightOf="@id/weather_icon"
+                app:layout_constraintTop_toTopOf="@id/main_weather_description"
+                app:layout_constraintBottom_toBottomOf="@id/weather_icon"
+                android:textSize="28sp"
+                android:textColor="@android:color/secondary_text_light"
+                tools:text="Sunny"/>
+
         <FrameLayout
                 android:id="@+id/back_info"
                 android:layout_width="match_parent"
-                android:layout_height="500dp"
+                android:layout_height="300dp"
+                android:layout_marginTop="10dp"
                 android:visibility="invisible"
                 app:layout_constraintTop_toBottomOf="@id/weather_icon"
-                app:layout_constraintBottom_toBottomOf="parent"
-                tools:layout_editor_absoluteX="0dp"
-                app:layout_constraintVertical_bias="0.036"/>
+                tools:layout_editor_absoluteX="0dp"/>
 
         <TextView
                 android:id="@+id/temperature_label"
                 android:layout_height="wrap_content"
                 app:layout_constraintLeft_toLeftOf="@id/weather_icon"
                 app:layout_constraintTop_toTopOf="@id/back_info"
-                app:layout_constraintBottom_toTopOf="@id/humidity_label"
                 app:layout_constraintVertical_chainStyle="spread"
                 style="@style/WeatherLabel"
                 android:text="@string/weather_temperature_label"/>
