@@ -11,5 +11,7 @@ class WeatherData(val description: String,
 
 data class MainData(@SerializedName("temp") val temperature: Float,
                     val pressure: Int,
-                    val humidity: Int)
+                    val humidity: Int,
+                    @SerializedName("temp_min") val tempMin: Float,
+                    @SerializedName("temp_max") val tempMax: Float)
 

@@ -37,6 +37,8 @@ class WeatherFragment : Fragment() {
     private lateinit var temperature: TextView
     private lateinit var humidity: TextView
     private lateinit var pressure: TextView
+    private lateinit var tempMin: TextView
+    private lateinit var tempMax: TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -53,6 +55,8 @@ class WeatherFragment : Fragment() {
         temperature = view.findViewById(R.id.temperature)
         humidity = view.findViewById(R.id.humidity)
         pressure = view.findViewById(R.id.pressure)
+        tempMin = view.findViewById(R.id.tempMin)
+        tempMax = view.findViewById(R.id.tempMax)
 
         refreshLayout.setOnRefreshListener { refreshWeather() }
 
@@ -116,6 +120,8 @@ class WeatherFragment : Fragment() {
         temperature.text = getString(R.string.weather_temperature_value, weather.temperature.toInt())
         humidity.text = getString(R.string.weather_humidity_value, weather.humidity)
         pressure.text = getString(R.string.weather_pressure_value, weather.pressure)
+        tempMin.text = getString(R.string.weather_temp_min_value, weather.tempMin.toInt())
+        tempMax.text = getString(R.string.weather_temp_max_value, weather.tempMax.toInt())
     }
 
     fun clearUi() {
@@ -126,7 +132,8 @@ class WeatherFragment : Fragment() {
         temperature.text = ""
         humidity.text = ""
         pressure.text = ""
-
+        tempMin.text = ""
+        tempMax.text = ""
     }
 
     private fun refreshWeather() {
