@@ -33,6 +33,7 @@
                 android:layout_width="100dp"
                 android:layout_height="0dp"
                 android:layout_marginTop="30dp"
+                android:tint="@color/colorPlaceIcon"
                 app:layout_constraintDimensionRatio="1:1"
                 app:layout_constraintLeft_toLeftOf="@id/city"
                 app:layout_constraintTop_toBottomOf="@id/city"
@@ -70,7 +71,7 @@
                 android:id="@+id/back_info"
                 android:layout_width="match_parent"
                 android:layout_height="300dp"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="50dp"
                 android:visibility="invisible"
                 app:layout_constraintTop_toBottomOf="@id/weather_icon"
                 tools:layout_editor_absoluteX="0dp"/>

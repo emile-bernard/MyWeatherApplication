@@ -4,5 +4,6 @@
 
     <item android:id="@+id/action_refresh_weather"
         app:showAsAction="never"
-        android:title="@string/menu_refresh_weather" />
+        android:title="@string/menu_refresh_weather"/>
+
 </menu>
