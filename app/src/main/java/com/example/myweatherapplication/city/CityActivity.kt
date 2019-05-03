@@ -15,7 +15,9 @@ class CityActivity : AppCompatActivity(), CityFragment.CityFragmentListener {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
         setContentView(R.layout.activity_city)
+
         cityFragment = supportFragmentManager.findFragmentById(R.id.city_fragment) as CityFragment
         cityFragment.listener = this
 
@@ -24,6 +26,7 @@ class CityActivity : AppCompatActivity(), CityFragment.CityFragmentListener {
 
     override fun onResume() {
         super.onResume()
+
         if (!isHandsetLayout() && currentCity != null) {
             weatherFragment?.updateWeatherForCity(currentCity!!.name)
         }
@@ -31,6 +34,7 @@ class CityActivity : AppCompatActivity(), CityFragment.CityFragmentListener {
 
     override fun onCitySelected(city: City) {
         currentCity = city
+
         if (isHandsetLayout()) {
             startWeatherActivity(city)
         } else {
@@ -53,5 +57,4 @@ class CityActivity : AppCompatActivity(), CityFragment.CityFragmentListener {
     }
 
     private fun isHandsetLayout(): Boolean = weatherFragment == null
-
 }
